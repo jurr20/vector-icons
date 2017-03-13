@@ -1,0 +1,177 @@
+*{
+	box-sizing:border-box;
+}
+body{
+	font-size:16px;
+	color: #000;
+}
+.container {
+	margin: 0 auto;
+	max-width:370px;
+	padding: 0 30px;
+	box-sizing:content-box;
+}
+.container:after {
+	content: "";
+	display: block;
+	clear: both;
+}
+.block-columns{
+	font-size: 0;
+	padding-top: 40px;
+}
+.column{
+	width: 16.66%;
+	display: inline-block;
+	vertical-align: top;
+	font-size: 32px;
+	text-align: center;
+	padding: 10px 5px;
+}
+@media screen and (max-width:300px){
+	.column{
+		width: 25%;
+	}
+}
+.block-columns .title{
+	font-size: 17px;
+	text-align: center;
+	font-family: sans-serif;
+	margin-bottom: 30px;
+}
+.column i{
+	transition:0.3s;
+}
+.column i:hover{
+	color:#73a523;
+	cursor: pointer;
+}
+.block-columns.images img{
+	max-width: 32px;
+	height: auto;
+	display: block;
+	margin: 0 auto;
+}
+.heart{
+	opacity:0;
+}
+.heart-holder{
+	position: relative;
+	max-width: 32px;
+	margin: 0 auto;
+}
+.heart-holder{
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	color: #000;
+	text-decoration: none;
+	text-transform: uppercase;
+	position: relative;
+}
+.heart-holder:after{
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: url(../images/heart.svg) no-repeat;
+	-webkit-background-size: contain;
+	background-size: contain;
+	z-index: -1;
+	-webkit-animation: none;
+	-moz-animation:none;
+	-ms-animation: none;
+	-o-animation: none;
+	animation: none;
+}
+.heart-holder:hover:after{
+	-webkit-animation: b 2s ease-in-out infinite;
+	-moz-animation: b 2s ease-in-out infinite;
+	-ms-animation: b 2s ease-in-out infinite;
+	-o-animation: b 2s ease-in-out infinite;
+	animation: b 2s ease-in-out infinite;
+}
+@keyframes b {
+  0% {
+    -webkit-transform: scale(1, 1);
+    -moz-transform: scale(1, 1);
+    -ms-transform: scale(1, 1);
+    -o-transform: scale(1, 1);
+    transform: scale(1, 1);
+  }
+  50% {
+    -moz-transform: scale(1.1, 1.1);
+    -ms-transform: scale(1.1, 1.1);
+    -webkit-transform: scale(1.1, 1.1);
+    -o-transform: scale(1.1, 1.1);
+    transform: scale(1.1, 1.1);
+  }
+  100% {
+    -moz-transform: scale(1, 1);
+    -ms-transform: scale(1, 1);
+    -webkit-transform: scale(1, 1);
+    -o-transform: scale(1, 1);
+    transform: scale(1, 1);
+  }
+}
+.food:hover path:not(:last-child){
+	-webkit-animation: rotate 2s linear infinite;
+	-moz-animation: rotate 2s linear infinite;
+	-ms-animation: rotate 2s linear infinite;
+	-o-animation: rotate 2s linear infinite;
+	animation: rotate 2s linear infinite;
+}
+@keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0);
+    -moz-transform: rotate(0);
+    -ms-transform: rotate(0);
+    -o-transform: rotate(0);
+    transform: rotate(0);
+  }
+  25% {
+  	-webkit-transform: rotate(10deg);
+  	-moz-transform: rotate(10deg);
+  	-ms-transform: rotate(10deg);
+  	-o-transform: rotate(10deg);
+  	transform: rotate(10deg);
+  }
+  50% {
+  	-webkit-transform: rotate(0);
+  	-moz-transform: rotate(0);
+  	-ms-transform: rotate(0);
+  	-o-transform: rotate(0);
+  	transform: rotate(0);
+  }
+  75% {
+  	-webkit-transform: rotate(-8deg);
+  	-moz-transform: rotate(-8deg);
+  	-ms-transform: rotate(-8deg);
+  	-o-transform: rotate(8deg);
+  	transform: rotate(-8deg);
+  }
+  100% {
+  	-webkit-transform: rotate(0);
+  	-moz-transform: rotate(0);
+  	-ms-transform: rotate(0);
+  	-o-transform: rotate(0);
+  	transform: rotate(0);
+  }
+}
+.clock:hover path:nth-child(4){
+	animation: clock 2s infinite linear;
+}
+
+@keyframes clock {
+  0% {transform:rotate(0deg)}
+  100% {transform:rotate(360deg)}
+}
+
+.banknote path{
+	transition:0.3s;
+}
+.banknote:hover path:not(:first-child){
+	fill: #55d35b;
+}
